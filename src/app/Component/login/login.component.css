@@ -1,0 +1,89 @@
+body{
+    background-color: #eee;
+}
+@font-face{
+    font-family: 'Comic Sans MS';
+    src: url('/assets/Font/Comic\ Sans\ MS\ 400.ttf');
+}
+.login{
+    background-image: url("/assets/Image/Login/bg-02.jpg");
+    width: 1172px;
+    height: 645px;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: 109px;
+    top: 28px;
+    background-size: cover;
+}
+.login .image{
+    background-color: white;
+    border-radius: 50%;
+    width: 113px;
+    height: 113px;
+    position: absolute;
+    top: 100px;
+    left: 500px;
+}
+.title{
+    position: absolute;
+}
+.title h1{
+    color: white;
+    text-transform: uppercase;
+    position: relative;
+    top: 235px;
+    right: 30px;
+    text-align: center;
+    font-size: 5rem;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+.UP {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+    position: absolute;
+}
+.material-icons{
+    color: white;
+}
+.login img{
+    position: relative;
+    top: 27px;
+    left: -6px;
+}
+.login .lg{
+    position: relative;
+    top: 327px;
+    left: 400px;
+    font-size: 1.5rem;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+.login mat-label{
+    color: white;
+}
+.login input::placeholder{
+    color: white !important;
+}
+.login input{
+    color: white;
+}
+.login .pw{
+    position: relative;
+    top: 430px;
+    left: 185px;
+    font-size: 1.5rem;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+}
+.btn{
+    position: absolute;
+}
+.btn button{
+    position: relative;
+    top: 550px;
+    left: 40px;
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+    font-size: 1.5rem;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+}

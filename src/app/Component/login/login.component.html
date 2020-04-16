@@ -1,0 +1,50 @@
+<section>
+    <body>
+        <div class="login container">
+            <div class="image container">
+                <img src="assets/Image/Login/logoUNI.png">
+            </div>
+            <div class="title container">
+              <h1>Guni</h1>
+            </div>
+            <div *ngIf="errorMessage" class="row">
+              <div class="alert alert-info col-sm-3 alert-dismissable" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <strong>Error</strong> {{errorMessage}}
+              </div>
+            </div>
+            <div class="usepass container">
+              <form class="UP" #formLogin="ngForm" (ngSubmit)="onSubmit()">
+                <mat-form-field class="lg">
+                  <mat-label>Username</mat-label>
+                  <span matPrefix class="material-icons"> person &nbsp;</span>
+                  <input matInput [formControl]="LoginFormControl" name="email" email="ngModel" [(ngModel)]="user.email" placeholder="Ex. thromero">
+                  <mat-error *ngIf="LoginFormControl.hasError('email') && !LoginFormControl.hasError('required')">
+                    Please enter a valid email address
+                  </mat-error>
+                  <mat-error *ngIf="LoginFormControl.hasError('required')">
+                    Email is <strong>required</strong>
+                  </mat-error>
+                </mat-form-field>
+
+                <mat-form-field class="pw">
+                  <mat-label>Password</mat-label>
+                  <span matPrefix class="material-icons"> lock &nbsp;</span>
+                  <input matInput [formControl]="LoginFormControl" name="password" password="ngModel" [(ngModel)]="user.password" type="password">
+                  <mat-error *ngIf="LoginFormControl.hasError('password') && !LoginFormControls.hasError('required')">
+                    Please enter a valid password
+                  </mat-error>
+                  <mat-error *ngIf="LoginFormControl.hasError('required')">
+                    Password is <strong>required</strong>
+                  </mat-error>
+                </mat-form-field>
+
+                <div class="btn">
+                  <button mat-raised-button type="submit" [disabled]="!formLogin.form.valid">Sign in</button>
+                </div>
+
+              </form>
+            </div>            
+        </div>
+    </body>
+</section>

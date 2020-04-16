@@ -1,0 +1,78 @@
+<section>
+   <div class="guni container active" id="sidebar">
+      <button mat-raised-button matTooltip="Ocultar/Mostrar" class="show">
+         <div class="material-icons">
+            vertical_split
+         </div>
+      </button>
+
+      <div class="row menu">
+         <div class="user col-sm">
+            <div class="img">
+               <button mat-raised-button matTooltip="{{token}}">
+                  <div class="material-icons">
+                     account_circle
+                  </div>
+               </button>
+            </div>
+         </div>
+
+         <div class="w-100">
+            
+            <div class="col-sm register">
+               <button mat-raised-button matTooltip="Registrar">
+                  <a routerLink='/register' class="material-icons">
+                     fiber_new
+                  </a>
+               </button>
+            </div>
+
+            <div class="col-sm event">
+               <button mat-raised-button matTooltip="Eventos">
+                  <a href="#" class="material-icons">
+                     date_range
+                  </a>
+               </button>
+            </div>
+
+            <div class="col-sm new">
+               <button mat-raised-button matTooltip="Noticias">
+                  <a href="#" class="material-icons">
+                     public
+                  </a>
+               </button>
+            </div>
+
+            <div class="col-sm agent">
+               <button mat-raised-button matTooltip="Agenda">
+                  <a href="#" class="material-icons">
+                     list_alt
+                  </a>
+               </button>
+            </div>
+
+            <div class="col-sm multi">
+               <button mat-raised-button matTooltip="Multimedia" [matMenuTriggerFor]="menu">
+                  <mat-menu #menu="matMenu">
+                     <button mat-menu-item>Video</button>
+                     <button mat-menu-item>Audio</button>
+                     <button mat-menu-item>Boletines</button>
+                  </mat-menu>
+                  <span class="material-icons">
+                     slideshow
+                     </span>
+               </button>
+            </div>
+
+            <div class="col-sm logout">
+               <button mat-raised-button matTooltip="SALIR" (click)="logout()">
+               <div class="material-icons">
+                  exit_to_app
+               </div>   
+            </button>
+            </div> 
+         </div>        
+      </div>
+   </div>   
+</section>
+

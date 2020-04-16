@@ -1,0 +1,29 @@
+.options{
+    position: absolute;
+}
+.opt{
+    position: fixed;
+    left: 500px;
+    top: 90px;
+}
+.logo{
+    position: absolute;
+}
+.logo img{
+    position: absolute;
+    width: 850px;
+    left: 314px;
+    top: 201px;
+}
+.material-icons{
+    color: #003782;
+    font-size: 3rem;
+}
+.list{
+    left: 300px;
+}
+.btn-back{
+    position: absolute;
+    top: 83px;
+    left: 194px;
+}

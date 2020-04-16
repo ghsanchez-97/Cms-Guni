@@ -1,0 +1,318 @@
+.alert{
+    position: absolute;
+}
+/*Responsive */
+@media(min-width: 1800px){
+    body{
+        width: 33.3%;
+        background-color: rosybrown;
+    }
+    .login .image{
+        border-radius: 50% !important;
+        width: 160px !important;
+        height: 141px !important;
+    }
+    .login img{
+        top: 32px !important;
+        left: 3px !important;
+        width: 121px;
+    }
+    .title h1{
+        top: 297px !important;
+        font-size: 8rem !important;
+    }
+    .login{
+        height: 903px !important;
+        left: 379px !important;
+        top: 28px !important;
+    }
+    .login .usepass{
+        position: absolute;
+    }
+    .usepass .lg{
+        top: 480px !important;
+    }
+    .usepass .pw{
+        top: 589px !important;
+    }
+    .btn button{
+        top: 703px !important;
+        left: 13px !important;
+    }
+}
+@media(max-width:1799px){
+    body{
+        width: 33.3%;
+        background-color: lawngreen;
+    }
+    .login .image{
+        border-radius: 50% !important;
+        width: 160px !important;
+        height: 141px !important;
+    }
+    .login img{
+        top: 32px !important;
+        left: 3px !important;
+        width: 121px;
+    }
+    .title h1{
+        top: 297px !important;
+        font-size: 8rem !important;
+    }
+    .login{
+        height: 846px !important;
+        left: 309px !important;
+        top: 28px !important;
+    }
+    .login .usepass{
+        position: absolute;
+    }
+    .usepass .lg{
+        top: 480px !important;
+    }
+    .usepass .pw{
+        top: 589px !important;
+    }
+    .btn button{
+        top: 703px !important;
+        left: 13px !important;
+    }
+}
+@media(max-width:1699px){
+    body{
+        width: 33.3%;
+        background-color: lightskyblue;
+    }
+    .login .image{
+        border-radius: 50% !important;
+        width: 160px !important;
+        height: 141px !important;
+    }
+    .login img{
+        top: 32px !important;
+        left: 3px !important;
+        width: 121px;
+    }
+    .title h1{
+        top: 297px !important;
+        font-size: 8rem !important;
+    }
+    .login{
+        height: 846px !important;
+        left: 282px !important;
+        top: 28px !important;
+    }
+    .login .usepass{
+        position: absolute;
+    }
+    .usepass .lg{
+        top: 480px !important;
+    }
+    .usepass .pw{
+        top: 589px !important;
+    }
+    .btn button{
+        top: 703px !important;
+        left: 13px !important;
+    }
+}
+@media(max-width:1599px){
+    body{
+        width: 33.3%;
+        background-color: lightslategray;
+    }
+    .login .image{
+        border-radius: 50% !important;
+        width: 160px !important;
+        height: 141px !important;
+    }
+    .login img{
+        top: 32px !important;
+        left: 3px !important;
+        width: 121px;
+    }
+    .title h1{
+        top: 297px !important;
+        font-size: 8rem !important;
+    }
+    .login{
+        height: 846px !important;
+        left: 225px !important;
+        top: 28px !important;
+    }
+    .login .usepass{
+        position: absolute;
+    }
+    .usepass .lg{
+        top: 480px !important;
+    }
+    .usepass .pw{
+        top: 589px !important;
+    }
+    .btn button{
+        top: 703px !important;
+        left: 13px !important;
+    }
+}
+@media(max-width:1499px){
+    body{
+        width: 33.3%;
+        background-color: linen;
+    }
+    .login .image{
+        border-radius: 50% !important;
+        width: 160px !important;
+        height: 160px !important;
+        top: 42px !important;
+        left: 500px !important;
+    }
+    .login img{
+        top: 42px !important;
+        left: 3px !important;
+        width: 121px;
+    }
+    .title h1{
+        top: 218px !important;
+        font-size: 5rem !important;
+    }
+    .login{
+        height: 645px !important;
+        left: 166px !important;
+        top: 28px !important;
+    }
+    .login .usepass{
+        position: absolute;
+    }
+    .usepass .lg{
+        top: 327px !important;
+    }
+    .usepass .pw{
+        top: 430px !important;
+    }
+    .btn button{
+        top: 550px !important;
+        left: 13px !important;
+    }
+}
+@media(max-width:1399px){
+    body{
+        width: 33.3%;
+        background-color: lightsteelblue;
+    }
+    .login .image{
+        border-radius: 50% !important;
+        width: 160px !important;
+        height: 160px !important;
+        top: 42px !important;
+        left: 500px !important;
+    }
+    .login img{
+        top: 42px !important;
+        left: 3px !important;
+        width: 121px;
+    }
+    .title h1{
+        top: 218px !important;
+        font-size: 5rem !important;
+    }
+    .login{
+        height: 645px !important;
+        left: 118px !important;
+        top: 28px !important;
+    }
+    .login .usepass{
+        position: absolute;
+    }
+    .usepass .lg{
+        top: 327px !important;
+    }
+    .usepass .pw{
+        top: 430px !important;
+    }
+    .btn button{
+        top: 550px !important;
+        left: 13px !important;
+    }
+}
+@media(max-width:1299px){
+    body{
+        width: 33.3%;
+        background-color: lightyellow;
+    }
+    .login .image{
+        border-radius: 50% !important;
+        width: 160px !important;
+        height: 160px !important;
+        top: 42px !important;
+        left: 500px !important;
+    }
+    .login img{
+        top: 42px !important;
+        left: 3px !important;
+        width: 121px;
+    }
+    .title h1{
+        top: 218px !important;
+        font-size: 5rem !important;
+    }
+    .login{
+        height: 645px !important;
+        left: 75px !important;
+        top: 28px !important;
+    }
+    .login .usepass{
+        position: absolute;
+    }
+    .usepass .lg{
+        top: 327px !important;
+    }
+    .usepass .pw{
+        top: 430px !important;
+    }
+    .btn button{
+        top: 550px !important;
+        left: 13px !important;
+    }
+}
+@media(max-width:1199px){
+    body{
+        width: 33.3%;
+        background-color: linen;
+    }
+    .login .image{
+        border-radius: 50% !important;
+        width: 160px !important;
+        height: 160px !important;
+        top: 42px !important;
+        left: 393px !important;
+    }
+    .login img{
+        top: 42px !important;
+        left: 3px !important;
+        width: 121px;
+    }
+    .title h1{
+        top: 218px !important;
+        font-size: 5rem !important;
+    }
+    .login{
+        height: 645px !important;
+        left: 111px !important;
+        top: 28px !important;
+    }
+    .login .usepass{
+        position: absolute;
+    }
+    .usepass .lg{
+        top: 327px !important;
+        left: 350px !important;
+    }
+    .usepass .pw{
+        top: 430px !important;
+        left: 133px !important;
+    }
+    .btn button{
+        top: 550px !important;
+        left: -67px !important;
+    }
+}
