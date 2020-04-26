@@ -30,6 +30,22 @@ export class UserService {
     return this.http.post(this.url+'login', params, {headers:headers})
   }
 
+  register(userRegister, token){
+    var params = JSON.stringify(userRegister);
+    var headers= new HttpHeaders({'Content-Type': 'application/json',
+    'Authorization': token});
+
+    return this.http.post(this.url+'register', params, {headers:headers});
+  }
+
+  getUsers(token, page){
+    var headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': token
+    })
+    return this.http.get(this.url+'getUsers/'+page, {headers:headers})
+  }
+
   getIdentity(){
     var identity = JSON.parse(localStorage.getItem('identity'));
 

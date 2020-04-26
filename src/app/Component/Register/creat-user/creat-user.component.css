@@ -1,0 +1,45 @@
+@font-face{
+    font-family: 'Source Sans Pro Black';
+    src: url('/assets/Font/SourceSansPro-Black.otf');
+}
+.tl{
+    position: relative;
+    top: -200px;
+    width: 789px;
+}
+.ht{
+    position: absolute;
+    left: 407px;
+}
+.tl h1{
+    font-family: 'Source Sans Pro Black',sans-serif;
+    -webkit-text-stroke: 5px #003782;
+    color: white;
+    text-transform: uppercase;
+}
+.regis-user{
+    position: absolute;
+    left: 520px;
+    top: 157px;
+    margin-right: 82px;
+}
+mat-label{
+    color: #003782;
+    font-size: 1.4em;
+}
+.btn{
+    padding: 0px;
+    position: fixed;
+    font-size: 1.5rem;
+    top: 439px;
+    left: 764px;
+}
+.btn-rtn{
+    position: absolute;
+    bottom: 68px;
+    left: 702px;
+}
+.btn-return .material-icons{
+    font-size: 3.5rem;
+    color: #003782;
+}

@@ -12,6 +12,11 @@ import {MatSliderModule} from '@angular/material/slider';
 import {MatButtonModule} from '@angular/material/button';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatMenuModule} from '@angular/material/menu';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatIconModule} from '@angular/material/icon';
+import {MatSelectModule} from '@angular/material/select';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatTableModule} from '@angular/material/table';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { LoginComponent } from './Component/login/login.component';
@@ -20,6 +25,7 @@ import { GuniComponent } from './Component/guni/guni.component';
 
 import { RegisterComponent } from './Component/Register/register/register.component';
 import { CreatUserComponent } from './Component/Register/creat-user/creat-user.component';
+import { ListUsersComponent } from './Component/Register/list-users/list-users.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +34,8 @@ import { CreatUserComponent } from './Component/Register/creat-user/creat-user.c
     CmsComponent,
     GuniComponent,
     RegisterComponent,
-    CreatUserComponent
+    CreatUserComponent,
+    ListUsersComponent
   ],
   imports: [
     BrowserModule,
@@ -42,6 +49,11 @@ import { CreatUserComponent } from './Component/Register/creat-user/creat-user.c
     MatButtonModule,
     MatTooltipModule,
     MatMenuModule,
+    MatFormFieldModule,
+    MatIconModule,
+    MatSelectModule,
+    MatPaginatorModule,
+    MatTableModule,
     MatProgressSpinnerModule
   ],
   providers: [],

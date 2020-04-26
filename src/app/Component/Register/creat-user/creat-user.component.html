@@ -1,1 +1,124 @@
-<p>creat-user works!</p>
+<section>
+    <div class="container">
+        <app-cms></app-cms>
+    </div>
+
+    <div class="container title">
+        <div class="row tl">
+            <h1 class="col-sm ht">Registrar Usuario</h1>
+        </div>
+    </div>
+
+    <div *ngIf="errorMessage" class="row">
+              <div class="alert alert-info col-sm-3 alert-dismissable" role="alert">
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                {{alertMessage}}
+              </div>
+    </div>
+
+    <div class="container formul">
+        <form class="regis-user" #formRegister='ngForm' (ngSubmit)='onSubmitRg()'>
+            <div class="test">
+                <div class="row">
+                    <mat-form-field appearance="outline" class="fsn col-sm">
+                        <mat-label>Primer nombre</mat-label>
+                        <input matInput [formControl]="RegisterFormControl" placeholder="Madisson" name="firstname" firstname="ngModel" [(ngModel)]="register.firstname">
+                        <mat-error *ngIf="RegisterFormControl.hasError('firstname') && !RegisterFormControl.hasError('required')">
+                            Please enter a valid firstname
+                          </mat-error>
+                          <mat-error *ngIf="RegisterFormControl.hasError('required')">
+                            Firstname is <strong>required</strong>
+                          </mat-error>
+                      </mat-form-field>
+                     
+                      <mat-form-field appearance="outline" class="fsn col-sm">
+                        <mat-label>Segundo nombre</mat-label>
+                        <input matInput [formControl]='RegisterFormControl' placeholder="Hinata" name="middlename" middlename='ngModel' [(ngModel)]='register.middlename'>
+                        <mat-error *ngIf="RegisterFormControl.hasError('middlename') && !RegisterFormControl.hasError('required')">
+                            Please enter a valid middlename
+                          </mat-error>
+                          <mat-error *ngIf="RegisterFormControl.hasError('required')">
+                            Middlename is <strong>required</strong>
+                          </mat-error>
+                      </mat-form-field>
+                </div>
+    
+                <div class="row">
+                    <mat-form-field appearance="outline" class="fsl col-sm">
+                        <mat-label>Primer Apellido</mat-label>
+                        <input [formControl]='RegisterFormControl' matInput placeholder="Sánchez" name="firstlastname" firstlastname='ngModel' [(ngModel)]='register.firstlastname'>
+                        <mat-error *ngIf="RegisterFormControl.hasError('firstlastname') && !RegisterFormControl.hasError('required')">
+                            Please enter a valid firstlastname
+                          </mat-error>
+                          <mat-error *ngIf="RegisterFormControl.hasError('required')">
+                            Firstlastname is <strong>required</strong>
+                          </mat-error>
+                      </mat-form-field>
+
+                      <mat-form-field appearance="outline" class="fsl col-sm">
+                        <mat-label>Segundo Apellido</mat-label>
+                        <input matInput [formControl]='RegisterFormControl' placeholder="Orh" name="middlelastname" middlelastname='ngModel' [(ngModel)]='register.middlelastname'>
+                        <mat-error *ngIf="RegisterFormControl.hasError('middlelastname') && !RegisterFormControl.hasError('required')">
+                            Please enter a valid middlelastname
+                          </mat-error>
+                          <mat-error *ngIf="RegisterFormControl.hasError('required')">
+                            Middlelastname is <strong>required</strong>
+                          </mat-error>
+                      </mat-form-field>
+                </div>
+    
+                <div class="row">
+                    <mat-form-field appearance="outline" class="uspw col-sm">
+                        <mat-label>Usuario</mat-label>
+                        <input matInput [formControl]='RegisterFormControl' placeholder="mhsanchez" name="email" email='ngModel' [(ngModel)]='register.email'>
+                        <mat-error *ngIf="RegisterFormControl.hasError('email') && !RegisterFormControl.hasError('required')">
+                            Please enter a valid email
+                          </mat-error>
+                          <mat-error *ngIf="RegisterFormControl.hasError('required')">
+                            Email is <strong>required</strong>
+                          </mat-error>
+                      </mat-form-field>
+
+                      <mat-form-field appearance="outline" class="uspw col-sm">
+                        <mat-label>Contraseña</mat-label>
+                        <input matInput [formControl]='RegisterFormControl' [type]="hide ? 'password' : 'text'" name="password" password='ngModel' [(ngModel)]='register.password'>
+                        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </button>
+                        <mat-error *ngIf="RegisterFormControl.hasError('password') && !RegisterFormControl.hasError('required')">
+                            Please enter a valid password
+                          </mat-error>
+                          <mat-error *ngIf="RegisterFormControl.hasError('required')">
+                            Password is <strong>required</strong>
+                          </mat-error>
+                      </mat-form-field>
+                </div>
+    
+                <div class="row">
+                    <mat-form-field appearance="outline" class="rol col-sm-5">
+                        <mat-label>Role</mat-label>
+                        <mat-select [formControl]='RegisterFormControl' name='rol' rol='ngModel' [(ngModel)]='register.rol'>
+                            <mat-option value="Admin">Administrador</mat-option>
+                            <mat-option value="User">Usuario</mat-option>
+                          </mat-select>
+                          <mat-error *ngIf="RegisterFormControl.hasError('rol') && !RegisterFormControl.hasError('required')">
+                            Please enter a valid rol
+                          </mat-error>
+                          <mat-error *ngIf="RegisterFormControl.hasError('required')">
+                            Rol is <strong>required</strong>
+                          </mat-error>
+                      </mat-form-field>
+                      <button mat-raised-button color="primary" type="submit" class="rol btn col-sm-2">Crear Usuario</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="btn-return">
+        <button mat-raised-button matTooltip='Regresar' class="btn-rtn">
+            <a routerLink='/register' class="material-icons back">
+                menu_open
+            </a> 
+        </button>
+    </div>
+</section>
