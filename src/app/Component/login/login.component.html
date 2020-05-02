@@ -34,7 +34,7 @@
                   <mat-label>Password</mat-label>
                   <span matPrefix class="material-icons"> lock &nbsp;</span>
                   <input matInput [formControl]="LoginFormControl" name="password" password="ngModel" [(ngModel)]="user.password" type="password">
-                  <mat-error *ngIf="LoginFormControl.hasError('password') && !LoginFormControls.hasError('required')">
+                  <mat-error *ngIf="LoginFormControl.hasError('password') && !LoginFormControl.hasError('required')">
                     Please enter a valid password
                   </mat-error>
                   <mat-error *ngIf="LoginFormControl.hasError('required')">

@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, Validators, FormBuilder, FormGroup} from '@angular/forms';
-import {MatPaginator} from '@angular/material/paginator';
-import {MatTableDataSource} from '@angular/material/table';
 
-import { User } from '../../../models/user';
+import { Register } from '../../../models/register';
 import { UserService } from '../../../Services/user.service'
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { GLOBAL } from '../../../Services/Global'
@@ -16,11 +14,10 @@ import { GLOBAL } from '../../../Services/Global'
 })
 export class ListUsersComponent implements OnInit {
   
-  user= new User('','','','','','');
+  user: Register;
   token;
   url:string;
-  next;
-  prev;
+  p: number = 1; 
   
   constructor(
     private route: ActivatedRoute,
@@ -29,13 +26,10 @@ export class ListUsersComponent implements OnInit {
   ) { 
     this.token = this.userService.getToken();
     this.url = GLOBAL.url;
-    this.next = 1;
-    this.prev = 1;
-
   }
 
   ngOnInit() {
-    this.getUsers()
+    this.getUsers();
   }
 
   getUsers(){

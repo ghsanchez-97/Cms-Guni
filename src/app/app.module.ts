@@ -18,6 +18,7 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatTableModule} from '@angular/material/table';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 import { LoginComponent } from './Component/login/login.component';
 import { CmsComponent } from './Component/cms/cms.component';
@@ -54,7 +55,8 @@ import { ListUsersComponent } from './Component/Register/list-users/list-users.c
     MatSelectModule,
     MatPaginatorModule,
     MatTableModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    NgxPaginationModule
   ],
   providers: [],
   bootstrap: [AppComponent],
