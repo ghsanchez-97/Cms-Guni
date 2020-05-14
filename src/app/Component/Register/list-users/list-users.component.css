@@ -3,3 +3,23 @@
     left: 500px;
     top: 136px;
 }
+.btn-back{
+    position: absolute;
+    top: 83px;
+    left: 194px;
+}
+.material-icons{
+    color: #003782;
+    font-size: 3rem;
+}
+.cd{
+    color: white !important;
+    display: inline;
+    position: relative;
+    top: -12px;
+}
+.example-buttom-container{
+    display: flex;
+    justify-content: center;
+    width: 120px;
+}

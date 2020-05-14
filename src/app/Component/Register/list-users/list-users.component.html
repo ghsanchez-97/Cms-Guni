@@ -18,10 +18,28 @@
               <td>{{element.firstname}}</td>
               <td>{{element.firstlastname}}</td>
               <td>{{element.email}}</td>
+              <td class="example-buttom-container">
+                <button mat-fab color="primary" aria-label="Editar Usuario" matTooltip="Editar">
+                <mat-icon class="cd">create</mat-icon>
+                </button>
+              </td>
+              <td>
+                <button mat-fab color="primary" aria-label="Eliminar Usuario" matTooltip="Eliminar">
+                  <mat-icon class="cd">delete</mat-icon>
+                  </button>
+              </td>
             </tr>
           </tbody>
         </table>
         <pagination-controls (pageChange)="p = $event"></pagination-controls>
+      </div>
+
+      <div class="container">
+        <button mat-raised-button matTooltip="Atras" class="btn-back">
+          <a routerLink="/register" class="material-icons back">
+            menu_open
+          </a>
+        </button>
       </div>
     </div>
 
