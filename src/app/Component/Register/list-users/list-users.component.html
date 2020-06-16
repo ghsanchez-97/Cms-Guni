@@ -11,6 +11,8 @@
               <th>Nombre</th>
               <th>Apellido</th>
               <th>Usuario</th>
+              <th>Editar</th>
+              <th>Eliminar</th>
             </tr>
           </thead>
           <tbody>
@@ -20,12 +22,16 @@
               <td>{{element.email}}</td>
               <td class="example-buttom-container">
                 <button mat-fab color="primary" aria-label="Editar Usuario" matTooltip="Editar">
-                <mat-icon class="cd">create</mat-icon>
+                <mat-icon class="cd">
+                    <a [routerLink]="['/Update-User', element._id]">create</a>
+                </mat-icon>
                 </button>
               </td>
               <td>
                 <button mat-fab color="primary" aria-label="Eliminar Usuario" matTooltip="Eliminar">
-                  <mat-icon class="cd">delete</mat-icon>
+                  <mat-icon class="cd">
+                    <a href="#">delete</a>
+                  </mat-icon>
                   </button>
               </td>
             </tr>

@@ -27,6 +27,7 @@ import { GuniComponent } from './Component/guni/guni.component';
 import { RegisterComponent } from './Component/Register/register/register.component';
 import { CreatUserComponent } from './Component/Register/creat-user/creat-user.component';
 import { ListUsersComponent } from './Component/Register/list-users/list-users.component';
+import { UpdateComponent } from './Component/Register/update/update.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { ListUsersComponent } from './Component/Register/list-users/list-users.c
     GuniComponent,
     RegisterComponent,
     CreatUserComponent,
-    ListUsersComponent
+    ListUsersComponent,
+    UpdateComponent
   ],
   imports: [
     BrowserModule,

@@ -6,6 +6,14 @@
     left: 500px;
     top: 90px;
 }
+.crt{
+    text-decoration: none;
+    list-style: none;
+}
+.lst{
+    text-decoration: none;
+    list-style: none;
+}
 .logo{
     position: absolute;
 }
@@ -26,4 +34,6 @@
     position: absolute;
     top: 83px;
     left: 194px;
+    text-decoration: none;
+    list-style: none;
 }

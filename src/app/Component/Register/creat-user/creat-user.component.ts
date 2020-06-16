@@ -19,16 +19,16 @@ export class CreatUserComponent implements OnInit {
   alertMessage;
   user = User;
   token;
-  register = new Register('','','','','','','',''); 
+  register: any = [];
 
   RegisterFormControl = new FormControl('', [
     Validators.required,
   ]);
 
   constructor(
-    private userservicces:UserService, private router:Router
+    private userservices:UserService, private router:Router
   ) {
-    this.token = this.userservicces.getToken();
+    this.token = this.userservices.getToken();
    }
 
   ngOnInit() {
@@ -37,7 +37,7 @@ export class CreatUserComponent implements OnInit {
   onSubmitRg(){
     console.log(this.register);
 
-    this.userservicces.register(this.register, this.token).subscribe(
+    this.userservices.register(this.register, this.token).subscribe(
       res =>{
         var user = res['user'];
         this.register = user;

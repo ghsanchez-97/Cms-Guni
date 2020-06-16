@@ -1,0 +1,64 @@
+<section>
+    <div class="container">
+        <app-cms></app-cms>
+    </div>
+
+    <div class="container title">
+        <div class="row tl">
+            <h1 class="col-sm ht">Actualización</h1>
+        </div>
+    </div>
+
+    <div class="container formul">
+      <form class="update-user" #formUpdate='ngForm' (ngSubmit)='onSubmitUp()'>
+          <div class="test">
+            <div class="row">
+              <mat-form-field appearance="outline" class="fsn col-sm">
+                  <mat-label>Primer nombre</mat-label>
+                  <input matInput placeholder="Madisson" name="firstname" firstname="ngModel" [(ngModel)]="register.firstname">
+                </mat-form-field>
+               
+                <mat-form-field appearance="outline" class="fsn col-sm">
+                  <mat-label>Segundo nombre</mat-label>
+                  <input matInput placeholder="Hinata" name="middlename" middlename="ngModel" [(ngModel)]='register.middlename'>
+                </mat-form-field>
+          </div>
+
+          <div class="row">
+              <mat-form-field appearance="outline" class="fsl col-sm">
+                  <mat-label>Primer Apellido</mat-label>
+                  <input matInput placeholder="Sánchez" name="firstlastname" firstlastname='ngModel' [(ngModel)]='register.firstlastname'>
+                  </mat-form-field>
+
+                <mat-form-field appearance="outline" class="fsl col-sm">
+                  <mat-label>Segundo Apellido</mat-label>
+                  <input matInput placeholder="Orh" name="middlelastname" middlelastname='ngModel' [(ngModel)]='register.middlelastname'>
+                  </mat-form-field>
+          </div>
+
+          <div class="row">
+              <mat-form-field appearance="outline" class="uspw col-sm">
+                  <mat-label>Contraseña</mat-label>
+                  <input matInput [type]="hide ? 'password' : 'text'" name="password" password='ngModel' [(ngModel)]='register.password'>
+                  <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                  </button>
+                  </mat-form-field>
+
+                <mat-form-field appearance="outline" class="rol col-sm-5">
+                  <mat-label>Role</mat-label>
+                  <mat-select name='rol' rol='ngModel' [(ngModel)]='register.rol'>
+                      <mat-option value="Admin">Administrador</mat-option>
+                      <mat-option value="User">Usuario</mat-option>
+                    </mat-select>
+                    </mat-form-field>
+          </div>
+
+          <div class="row">
+                <button mat-raised-button color="primary" type="submit" class="rol btn col-sm-2">Actualizar Usuario</button>
+          </div>
+      </div>
+      </form>
+  </div>
+
+</section>
