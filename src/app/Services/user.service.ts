@@ -55,10 +55,9 @@ export class UserService {
     return this.http.get(this.url+'getUser/'+id, {headers:headers})
   }
 
-  updateUser(userUpdate:Register, token, id){
+  updateUser(userUpdate:Register, token, id:String){
     var params = JSON.stringify(userUpdate);
-    var headers= new HttpHeaders({
-    'Content-Type': 'application/json',
+    var headers = new HttpHeaders({'Content-Type': 'application/json',
     'Authorization': token});
 
     return this.http.put(this.url+'updateUser/'+id, params, {headers:headers});

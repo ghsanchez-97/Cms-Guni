@@ -19,7 +19,7 @@ export class CreatUserComponent implements OnInit {
   alertMessage;
   user = User;
   token;
-  register: any = [];
+  register = new Register('','','','','','','','');
 
   RegisterFormControl = new FormControl('', [
     Validators.required,

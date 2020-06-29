@@ -60,18 +60,19 @@ export class UpdateComponent implements OnInit {
 
   onSubmitUp(){
     console.log(this.register)
+
     this.route.params.forEach((params:Params) =>{
       var id = params['id'];
 
       this.userservices.updateUser(this.token, id, this.register).subscribe(
         res =>{
-          var user = res['user'];
-          this.register = user;
+          //this.register = res;
 
-          if(!user.id){
-            alert ('Error al Actualizar')
+          if(!this.register.id){
+            alert("Error no se actualizado")
+          }else{
+            this.register
           }
-          this.router.navigateByUrl('/register');
 
         },e =>{
           var errorMessage = <any>e;
