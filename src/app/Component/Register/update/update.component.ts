@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, Validators, FormBuilder, FormGroup} from '@angular/forms';
+//import {FormControl, Validators, FormBuilder, FormGroup} from '@angular/forms';
 
-import { Register } from '../../../models/register';
+import { User } from '../../../models/user';
 import { UserService } from '../../../Services/user.service'
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { GLOBAL } from 'src/app/Services/Global';
@@ -10,15 +10,13 @@ import { GLOBAL } from 'src/app/Services/Global';
   selector: 'app-update',
   templateUrl: './update.component.html',
   styleUrls: ['./update.component.css'],
-  providers:[UserService]
+  providers: [UserService]
 })
 export class UpdateComponent implements OnInit {
-
   hide = true;
   token;
-  register : any =[];
+  user : User;
   url: string;
-
 
   constructor(
     private userservices: UserService, 
@@ -27,7 +25,7 @@ export class UpdateComponent implements OnInit {
   ) {
     this.token = this.userservices.getToken();
     this.url = GLOBAL.url;
-    this.register = new Register('','','','','','','',null);
+    this.user = new User('','','','','','','','','','');
    }
 
   ngOnInit() {
@@ -39,18 +37,17 @@ export class UpdateComponent implements OnInit {
       var id = params['id'];
 
       this.userservices.getUser(this.token, id).subscribe(
-        res =>{
-          var user = res['user'];  
-          this.register = user;
+        (res:any) =>{
+          this.user = !res ? [] : res.user;
   
-          if(!user){
-            this.router.navigate(['/register']);
+          if(!this.user){
+            this.router.navigate(['/List-User']);
           }e =>{
             var errorMessage = <any>e;
 
             if(errorMessage != null){
               var body = JSON.parse(e.body);
-              console.log(e)
+              console.log(body)
             }
           }
         }
@@ -58,31 +55,30 @@ export class UpdateComponent implements OnInit {
     })
   }
 
+
   onSubmitUp(){
-    console.log(this.register)
+     console.log(this.user)
+    // this.route.params.forEach((params : Params) =>{
+    //   var id = params['id'];
 
-    this.route.params.forEach((params:Params) =>{
-      var id = params['id'];
+    //   this.userservices.updateUser(this.token, id, this.user).subscribe(
+    //     (res:any) =>{
+    //       this.user = !res ? [] : res.user;
+  
+    //       if(!this.user){
+    //         this.router.navigate(['/List-User']);
+    //       }e =>{
+    //         var errorMessage = <any>e;
 
-      this.userservices.updateUser(this.token, id, this.register).subscribe(
-        res =>{
-          //this.register = res;
-
-          if(!this.register.id){
-            alert("Error no se actualizado")
-          }else{
-            this.register
-          }
-
-        },e =>{
-          var errorMessage = <any>e;
-            if(errorMessage != null){
-            //this.errorMessage = e.error.message;
-            console.log(e)
-          }
-        }
-      )
-    })
+    //         if(errorMessage != null){
+    //           var body = JSON.parse(e.body);
+    //           console.log(body)
+    //         }
+    //       }
+    //     }
+    //   )
+    // })
   }
+
 
 }

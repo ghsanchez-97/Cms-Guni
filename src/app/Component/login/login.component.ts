@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
   constructor(
     private userservicces:UserService, private router:Router
   ) { 
-    this.user = new User('','','','','','')
+    this.user = new User('','','','','','','','','','')
   }
   
   onSubmit(){

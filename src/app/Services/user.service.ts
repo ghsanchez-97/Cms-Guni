@@ -2,8 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpResponse} from '@angular/common/http';
 import 'rxjs/add/operator/map';
 import { Observable } from 'rxjs/Observable';
-import { GLOBAL } from './Global'
-import { Register } from '../models/register';  
+import { GLOBAL } from './Global';
+//import { Register } from '../models/register';  
 
 @Injectable({
   providedIn: 'root'
@@ -52,15 +52,25 @@ export class UserService {
       'Content-Type': 'application/json',
       'Authorization': token
     });
-    return this.http.get(this.url+'getUser/'+id, {headers:headers})
+    return this.http.get(this.url+'getUser/'+id, {headers:headers});
   }
 
-  updateUser(userUpdate:Register, token, id:String){
-    var params = JSON.stringify(userUpdate);
-    var headers = new HttpHeaders({'Content-Type': 'application/json',
-    'Authorization': token});
+  updateUser(user, id, token){
+    var params = JSON.stringify(user);
+    var headers= new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': token
+    });
 
     return this.http.put(this.url+'updateUser/'+id, params, {headers:headers});
+  }
+
+  deleteUser(token, id){
+    var headers = new HttpHeaders({
+      'Content-Type': 'application/json',
+      'Authorization': token
+    });
+    return this.http.delete(this.url+'deleteuser/'+id, {headers:headers});
   }
 
   getIdentity(){

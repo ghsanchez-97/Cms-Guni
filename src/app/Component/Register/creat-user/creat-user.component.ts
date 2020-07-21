@@ -17,9 +17,9 @@ export class CreatUserComponent implements OnInit {
   hide = true;
   errorMessage;
   alertMessage;
-  user = User;
+  //user = User;
   token;
-  register = new Register('','','','','','','','');
+  user = new User('','','','','','','','','','');
 
   RegisterFormControl = new FormControl('', [
     Validators.required,
@@ -35,12 +35,12 @@ export class CreatUserComponent implements OnInit {
   }
 
   onSubmitRg(){
-    console.log(this.register);
+    console.log(this.user);
 
-    this.userservices.register(this.register, this.token).subscribe(
+    this.userservices.register(this.user, this.token).subscribe(
       res =>{
         var user = res['user'];
-        this.register = user;
+        this.user = user;
 
         if(!user.id){
           this.alertMessage = 'Error al Registar'

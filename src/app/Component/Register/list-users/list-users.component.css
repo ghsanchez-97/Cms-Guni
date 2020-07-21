@@ -29,3 +29,13 @@ td a{
     list-style: none;
     text-decoration: none;
 }
+.secure{
+    margin-top: 1px;
+    position: relative;
+    height: 40px;
+    left: -91px;
+}
+.secure .btn{
+    /* margin: 5px 15px; */
+    border-radius: 50px;
+}

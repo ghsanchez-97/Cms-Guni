@@ -30,9 +30,20 @@
               <td>
                 <button mat-fab color="primary" aria-label="Eliminar Usuario" matTooltip="Eliminar">
                   <mat-icon class="cd">
-                    <a href="#">delete</a>
+                    <a (click)='onDeleteConfirm(element._id)'>delete</a>
                   </mat-icon>
                   </button>
+              </td>
+              <td>
+                <div class="secure" *ngIf="confirm == element._id">
+                  <a (click)="onDeleteEvent(element._id)" class="btn btn-sm btn-danger">
+                    Eliminar
+                  </a>
+                  <a (click)="onCancelEvent()" class="btn btn-sm btn-secondary">
+                    Cancelar
+                  </a>
+              </div>
+
               </td>
             </tr>
           </tbody>

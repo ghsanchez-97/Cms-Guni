@@ -9,6 +9,11 @@ import { CreatUserComponent } from './Component/Register/creat-user/creat-user.c
 import { ListUsersComponent } from './Component/Register/list-users/list-users.component';
 import { UpdateComponent } from './Component/Register/update/update.component';
 
+import { EventComponent } from './Component/Event/event/event.component';
+import { CreatEventComponent } from './Component/Event/creat-event/creat-event.component';
+import { ListEventComponent } from './Component/Event/list-event/list-event.component';
+import { EventEditComponent } from './Component/Event/event-edit/event-edit.component';
+
 import { AuthService } from './Services/auth.service';
 
 const routes: Routes = [
@@ -39,6 +44,26 @@ const routes: Routes = [
   {
     path:'Update-User/:id',
     component: UpdateComponent,
+    canActivate: [AuthService]
+  },
+  {
+    path: 'event',
+    component: EventComponent,
+    canActivate: [AuthService]
+  },
+  {
+    path: 'new-event',
+    component: CreatEventComponent,
+    canActivate: [AuthService]
+  },
+  {
+    path: 'list-event',
+    component: ListEventComponent,
+    canActivate: [AuthService]
+  },
+  {
+    path: 'event-edit/:id',
+    component: EventEditComponent,
     canActivate: [AuthService]
   },
   {

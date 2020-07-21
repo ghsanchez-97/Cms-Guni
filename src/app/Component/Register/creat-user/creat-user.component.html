@@ -81,10 +81,7 @@
 
                       <mat-form-field appearance="outline" class="uspw col-sm">
                         <mat-label>Contraseña</mat-label>
-                        <input matInput [formControl]='RegisterFormControl' [type]="hide ? 'password' : 'text'" name="password" password='ngModel' [(ngModel)]='register.password'>
-                        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-                            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-                        </button>
+      
                         <mat-error *ngIf="RegisterFormControl.hasError('password') && !RegisterFormControl.hasError('required')">
                             Please enter a valid password
                           </mat-error>

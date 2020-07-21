@@ -1,0 +1,59 @@
+<section>
+
+    <div class="container menu">
+        <app-cms></app-cms>
+    </div>
+
+    <div class="container list-event">
+        <div class="mat-elevation row">
+          <li *ngFor='let element of event | paginate: { itemsPerPage: 3, currentPage: p }' class="col-9 event-item">
+            <div class="event-name">
+
+              <a href="https://{{element.link}}" target="_blank">
+                {{element.name}}
+              </a>
+
+              <div class="event-img">
+                <img src="{{url + 'getImageEvent/' + element.image}}">
+              </div> 
+
+              <div class="op example-buttom-container">
+                <button mat-fab color="primary" aria-label="Editar Evento" matTooltip="Editar" style="margin-right: 31px">
+                  <mat-icon class="cd">
+                      <a [routerLink]="['/event-edit', element._id]">create</a>
+                  </mat-icon>
+                </button>
+
+                <button mat-fab color="primary" aria-label="Eliminar Evento" matTooltip="Eliminar">
+                  <mat-icon class="cd">
+                    <a (click)='onDeleteConfirm(element._id)'>delete</a>
+                  </mat-icon>
+                </button>
+
+              </div>
+
+              <div class="secure" *ngIf="confirm == element._id">
+                <a (click)="onDeleteEvent(element._id)" class="btn btn-sm btn-danger">
+                  Eliminar
+                </a>
+                <br>
+                <a (click)="onCancelEvent()" class="btn btn-sm btn-secondary">
+                  Cancelar
+                </a>
+            </div>
+
+            </div>
+          </li>
+          <pagination-controls (pageChange)="p = $event"></pagination-controls>
+        </div>
+  
+        <div class="container">
+          <button mat-raised-button matTooltip="Atras" class="btn-back">
+            <a routerLink="/event" class="material-icons back">
+              menu_open
+            </a>
+          </button>
+        </div>
+      </div>
+
+</section>

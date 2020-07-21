@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, Validators, FormBuilder, FormGroup} from '@angular/forms';
 
-import { Register } from '../../../models/register';
+import { User } from '../../../models/user';
 import { UserService } from '../../../Services/user.service'
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { GLOBAL } from '../../../Services/Global'
@@ -14,10 +14,11 @@ import { GLOBAL } from '../../../Services/Global'
 })
 export class ListUsersComponent implements OnInit {
   
-  user: Register;
+  user : User;
   token;
   url:string;
-  p: number = 1; 
+  p: number = 1;
+  confirm;
   
   constructor(
     private route: ActivatedRoute,
@@ -53,6 +54,23 @@ export class ListUsersComponent implements OnInit {
       )
     })  
 
+  }
+
+  onDeleteConfirm(id){
+    this.confirm = id;
+  }
+  onCancelEvent(){
+    this.confirm = null;
+  }
+
+  onDeleteEvent(id){
+    this.userService.deleteUser(this.token, id).subscribe(
+      (response:any)=>{
+        this.getUsers();
+      },e =>{
+        var errorMessage = <any>e;
+      }
+    )
   }
 
 }

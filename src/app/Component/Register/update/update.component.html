@@ -15,39 +15,35 @@
             <div class="row">
               <mat-form-field appearance="outline" class="fsn col-sm">
                   <mat-label>Primer nombre</mat-label>
-                  <input matInput placeholder="Madisson" name="firstname" firstname="ngModel" [(ngModel)]="register.firstname">
+                  <input matInput placeholder="Madisson" name="firstname" firstname="ngModel" [(ngModel)]="user.firstname" type="text">
                 </mat-form-field>
                
                 <mat-form-field appearance="outline" class="fsn col-sm">
                   <mat-label>Segundo nombre</mat-label>
-                  <input matInput placeholder="Hinata" name="middlename" middlename="ngModel" [(ngModel)]='register.middlename'>
+                  <input matInput placeholder="Hinata" name="middlename" middlename="ngModel" [(ngModel)]='user.middlename' type="text">
                 </mat-form-field>
           </div>
 
           <div class="row">
               <mat-form-field appearance="outline" class="fsl col-sm">
                   <mat-label>Primer Apellido</mat-label>
-                  <input matInput placeholder="Sánchez" name="firstlastname" firstlastname='ngModel' [(ngModel)]='register.firstlastname'>
+                  <input matInput placeholder="Sánchez" name="firstlastname" firstlastname='ngModel' [(ngModel)]='user.firstlastname' type="text">
                   </mat-form-field>
 
                 <mat-form-field appearance="outline" class="fsl col-sm">
                   <mat-label>Segundo Apellido</mat-label>
-                  <input matInput placeholder="Orh" name="middlelastname" middlelastname='ngModel' [(ngModel)]='register.middlelastname'>
+                  <input matInput placeholder="Orh" name="middlelastname" middlelastname='ngModel' [(ngModel)]='user.middlelastname' type="text">
                   </mat-form-field>
           </div>
 
           <div class="row">
-              <mat-form-field appearance="outline" class="uspw col-sm">
-                  <mat-label>Contraseña</mat-label>
-                  <input matInput [type]="hide ? 'password' : 'text'" name="password" password='ngModel' [(ngModel)]='register.password'>
-                  <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-                      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-                  </button>
-                  </mat-form-field>
+            <mat-form-field appearance="outline" class="uspw col-sm">
+              
+            </mat-form-field>
 
                 <mat-form-field appearance="outline" class="rol col-sm-5">
                   <mat-label>Role</mat-label>
-                  <mat-select name='rol' rol='ngModel' [(ngModel)]='register.rol'>
+                  <mat-select name='rol' rol='ngModel' [(ngModel)]='user.rol'>
                       <mat-option value="Admin">Administrador</mat-option>
                       <mat-option value="User">Usuario</mat-option>
                     </mat-select>
@@ -61,5 +57,6 @@
       
     </form>
   </div>
+
 
 </section>

@@ -1,0 +1,37 @@
+<section>
+    <div class="container menu">
+        <app-cms></app-cms>
+    </div>
+
+    <div class="container logo">
+        <img class="col img" src="assets/Image/Img/undraw_happy_announcement_ac67.svg">
+    </div>
+
+    <div class="container options">
+        <div class="row opt">
+            <div class="col-sm creat">
+                <button mat-raised-button matTooltip="Crear Evento">
+                    <a routerLink='/new-event' class="material-icons crt">
+                        event_note
+                    </a>
+                </button>
+            </div>
+            <div class="col-sm list">
+                <button mat-raised-button matTooltip="Lista de Evento">
+                    <a routerLink='/list-event' class="material-icons lst">
+                        event_available
+                    </a>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <button mat-raised-button matTooltip="Atras" class="btn-back">
+            <a routerLink='/guni' class="material-icons back">
+                menu_open
+            </a>
+        </button>
+    </div>
+
+</section>

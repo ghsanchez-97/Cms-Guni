@@ -1,0 +1,89 @@
+.mat-elevation{
+    position: absolute;
+    left: 594px;
+    top: 195px;
+}
+.btn-back{
+    position: absolute;
+    top: 83px;
+    left: 194px;
+    text-decoration: none;
+}
+.material-icons{
+    color: #003782;
+    font-size: 3rem;
+}
+.cd{
+    color: white !important;
+    display: inline;
+    position: relative;
+    top: -12px;
+}
+.example-buttom-container{
+    display: flex;
+    justify-content: center;
+    /* width: 120px; */
+    margin-right: 5px !important;
+}
+li {
+    list-style: none;
+}
+li a{
+    color: white;
+    list-style: none;
+    text-decoration: none;
+}
+.event-image img{
+    width: 220px;
+}
+
+.secure{
+    margin-top: 1px;
+    position: absolute;
+    height: 40px;
+    left: 475px;
+    top: 279px;
+}
+.secure .btn{
+    /* margin: 5px 15px; */
+    border-radius: 50px;
+}
+pagination-controls{
+    position: relative;
+    top: 137px;
+    left: 105px;
+}
+.event-img img{
+    width: 220px;
+}
+.event-item{
+    width: 23%;
+    margin: 0px;
+    border: 1px solid #444;
+    margin-top: 20px;
+}
+.event-item .event-img{
+    height: 245px;
+    width: 100%;
+    overflow: hidden;
+}
+.event-item .event-img img{
+    height: 100%;
+    min-width: 100%;
+}
+.event-item .event-name{
+    color: white;
+    padding: 10px;
+    background: #003782;
+    text-align: center;
+}
+.event-item .event-name a{
+    color: white;
+}
+.event-name .buttons{
+    padding-top: 5px;
+}
+.event-name .buttons .btn{
+    color: black;
+    margin: 0 15px;
+}

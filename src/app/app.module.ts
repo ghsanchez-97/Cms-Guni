@@ -29,6 +29,11 @@ import { CreatUserComponent } from './Component/Register/creat-user/creat-user.c
 import { ListUsersComponent } from './Component/Register/list-users/list-users.component';
 import { UpdateComponent } from './Component/Register/update/update.component';
 
+import { EventComponent } from './Component/Event/event/event.component';
+import { CreatEventComponent } from './Component/Event/creat-event/creat-event.component';
+import { ListEventComponent } from './Component/Event/list-event/list-event.component';
+import { EventEditComponent } from './Component/Event/event-edit/event-edit.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +43,11 @@ import { UpdateComponent } from './Component/Register/update/update.component';
     RegisterComponent,
     CreatUserComponent,
     ListUsersComponent,
-    UpdateComponent
+    UpdateComponent,
+    EventComponent,
+    CreatEventComponent,
+    ListEventComponent,
+    EventEditComponent
   ],
   imports: [
     BrowserModule,

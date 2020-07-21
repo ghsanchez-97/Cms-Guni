@@ -5,6 +5,10 @@ export class User{
         public email: string,
         public password: string,
         public role: string,
-        public image: string
+        public image: string,
+        public firstname: string,
+        public middlename: string,
+        public firstlastname: string,
+        public middlelastname: string,
     ){}
 }
