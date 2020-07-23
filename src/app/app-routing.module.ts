@@ -14,6 +14,9 @@ import { CreatEventComponent } from './Component/Event/creat-event/creat-event.c
 import { ListEventComponent } from './Component/Event/list-event/list-event.component';
 import { EventEditComponent } from './Component/Event/event-edit/event-edit.component';
 
+import { NewNwComponent } from './Component/new/new-nw/new-nw.component';
+import { NewComponent } from './Component/new/new/new.component';
+
 import { AuthService } from './Services/auth.service';
 
 const routes: Routes = [
@@ -66,6 +69,17 @@ const routes: Routes = [
     component: EventEditComponent,
     canActivate: [AuthService]
   },
+  {
+    path: 'New',
+    component: NewComponent,
+    canActivate: [AuthService]
+  },
+  {
+    path: 'new-nw',
+    component: NewNwComponent,
+    canActivate: [AuthService]
+  },
+  
   {
     path:'**',
     redirectTo:''

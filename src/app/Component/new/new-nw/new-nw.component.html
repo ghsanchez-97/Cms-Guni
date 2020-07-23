@@ -1,0 +1,39 @@
+<section>
+
+    <div class="container menu">
+        <app-cms></app-cms>
+    </div>
+    
+    <div class="container">
+        <div class="row title">
+            <h1 class="col">Nueva Noticia</h1>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <form #formNew='ngForm' class="col-xl" (ngSubmit)='onSubmitNw()'>
+                <div class="container col-sm">
+                    <label>Titulo</label>
+                    <input type="text" #name='ngModel' name="name" [(ngModel)]='new.name' required placeholder="Titulo de la Noticia">
+                </div>
+
+                <div class="container col-sm">
+                    <label>Opción de Noticia</label><br>
+                    <mat-radio-group aria-label="Select an option">
+                        <mat-radio-button #islinot='ngModel' name="islinot" [(ngModel)]='new.islinot' value="true" required>Link Externo</mat-radio-button>
+                        <mat-radio-button #islinot='ngModel' name="islinot" [(ngModel)]='new.islinot' value="false" required>Noticia</mat-radio-button>
+                    </mat-radio-group>
+                </div>
+
+                <div class="container" *ngIf="new.islinot === 'true'">
+                    <label>Url Externo</label>
+                    <input type="url" #link='ngModel' name="link" [(ngModel)]='new.link'>
+                </div>
+
+                
+            </form>
+        </div>
+    </div>
+
+</section>

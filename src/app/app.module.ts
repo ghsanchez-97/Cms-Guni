@@ -19,6 +19,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatTableModule} from '@angular/material/table';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import {NgxPaginationModule} from 'ngx-pagination';
+import {MatRadioModule} from '@angular/material/radio';
 
 import { LoginComponent } from './Component/login/login.component';
 import { CmsComponent } from './Component/cms/cms.component';
@@ -34,6 +35,9 @@ import { CreatEventComponent } from './Component/Event/creat-event/creat-event.c
 import { ListEventComponent } from './Component/Event/list-event/list-event.component';
 import { EventEditComponent } from './Component/Event/event-edit/event-edit.component';
 
+import { NewNwComponent } from './Component/new/new-nw/new-nw.component';
+import { NewComponent } from './Component/new/new/new.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -47,7 +51,9 @@ import { EventEditComponent } from './Component/Event/event-edit/event-edit.comp
     EventComponent,
     CreatEventComponent,
     ListEventComponent,
-    EventEditComponent
+    EventEditComponent,
+    NewNwComponent,
+    NewComponent
   ],
   imports: [
     BrowserModule,
@@ -67,7 +73,8 @@ import { EventEditComponent } from './Component/Event/event-edit/event-edit.comp
     MatPaginatorModule,
     MatTableModule,
     MatProgressSpinnerModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    MatRadioModule
   ],
   providers: [],
   bootstrap: [AppComponent],

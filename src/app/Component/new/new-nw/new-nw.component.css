@@ -1,0 +1,26 @@
+@font-face{
+    font-family: 'Source Sans Pro Black';
+    src: url('/assets/Font/SourceSansPro-Black.otf');
+}
+.title h1{
+    top: 20px !important;
+    position: absolute;
+    /* left: 500px; */
+    font-family: 'Source Sans Pro Black',sans-serif;
+    -webkit-text-stroke: 5px #003782;
+    color: white;
+    text-transform: uppercase;
+}
+.row{
+    position: absolute;
+    width: 935px;
+    left: 599px;
+    /* top: 300px; */
+}
+.nw-ev{
+    position: relative;
+}
+.nw-ev .op{
+    position: relative;
+    margin-top: 20px ;
+}
