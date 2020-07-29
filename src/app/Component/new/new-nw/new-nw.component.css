@@ -2,6 +2,10 @@
     font-family: 'Source Sans Pro Black';
     src: url('/assets/Font/SourceSansPro-Black.otf');
 }
+@font-face{
+    font-family: 'Lato-Italic';
+    src: url('/assets/Font/Lato-BlackItalic.ttf');
+}
 .title h1{
     top: 20px !important;
     position: absolute;
@@ -17,10 +21,39 @@
     left: 599px;
     /* top: 300px; */
 }
-.nw-ev{
+.nw{
     position: relative;
+    top: 232px;
 }
-.nw-ev .op{
+.container .sm {
+    text-transform: uppercase;
+    font-size:2vw;
+    font-family: 'Lato-Italic', cursive, sans-serif;
+    color: white;
+    -webkit-text-stroke: 2px #003782;
+}
+.container .sm .col-sm{
+    width: 100px;
+    position: relative;
+    margin: 0px;
+    padding: 0px;
+    display: inline-block;
+}
+.container .isps {
+    text-transform: uppercase;
+    font-size:2vw;
+    font-family: 'Lato-Italic', cursive, sans-serif;
+    color: white;
+    -webkit-text-stroke: 2px #003782;
+}
+.container .isps .col-md{
+    width: 100px;
+    position: relative;
+    margin: 0px;
+    padding: 0px;
+    display: inline-block;
+}
+.op{
     position: relative;
     margin-top: 20px ;
 }

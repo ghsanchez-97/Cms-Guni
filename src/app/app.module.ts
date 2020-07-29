@@ -20,6 +20,7 @@ import {MatTableModule} from '@angular/material/table';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import {NgxPaginationModule} from 'ngx-pagination';
 import {MatRadioModule} from '@angular/material/radio';
+import { RichTextEditorAllModule } from '@syncfusion/ej2-angular-richtexteditor';
 
 import { LoginComponent } from './Component/login/login.component';
 import { CmsComponent } from './Component/cms/cms.component';
@@ -37,6 +38,7 @@ import { EventEditComponent } from './Component/Event/event-edit/event-edit.comp
 
 import { NewNwComponent } from './Component/new/new-nw/new-nw.component';
 import { NewComponent } from './Component/new/new/new.component';
+import { NewListComponent } from './Component/new/new-list/new-list.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +55,8 @@ import { NewComponent } from './Component/new/new/new.component';
     ListEventComponent,
     EventEditComponent,
     NewNwComponent,
-    NewComponent
+    NewComponent,
+    NewListComponent
   ],
   imports: [
     BrowserModule,
@@ -74,7 +77,8 @@ import { NewComponent } from './Component/new/new/new.component';
     MatTableModule,
     MatProgressSpinnerModule,
     NgxPaginationModule,
-    MatRadioModule
+    MatRadioModule,
+    RichTextEditorAllModule
   ],
   providers: [],
   bootstrap: [AppComponent],

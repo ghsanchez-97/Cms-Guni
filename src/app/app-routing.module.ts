@@ -16,6 +16,7 @@ import { EventEditComponent } from './Component/Event/event-edit/event-edit.comp
 
 import { NewNwComponent } from './Component/new/new-nw/new-nw.component';
 import { NewComponent } from './Component/new/new/new.component';
+import { NewListComponent } from './Component/new/new-list/new-list.component';
 
 import { AuthService } from './Services/auth.service';
 
@@ -77,6 +78,11 @@ const routes: Routes = [
   {
     path: 'new-nw',
     component: NewNwComponent,
+    canActivate: [AuthService]
+  },
+  {
+    path: 'list-new',
+    component: NewListComponent,
     canActivate: [AuthService]
   },
   

@@ -12,26 +12,41 @@
 
     <div class="container">
         <div class="row">
-            <form #formNew='ngForm' class="col-xl" (ngSubmit)='onSubmitNw()'>
+            <form #formNew='ngForm' class="col-xl nw" (ngSubmit)='onSubmitNw()'>
                 <div class="container col-sm">
-                    <label>Titulo</label>
-                    <input type="text" #name='ngModel' name="name" [(ngModel)]='new.name' required placeholder="Titulo de la Noticia">
+                    <mat-form-field appearance="outline">
+                      <mat-label>Titulo</mat-label>
+                      <input matInput type="text" #name='ngModel' name="name" [(ngModel)]='nw.name' required placeholder="Titulo de la Noticia">  
+                    </mat-form-field>
                 </div>
 
-                <div class="container col-sm">
+                <div class="container sm">
                     <label>Opción de Noticia</label><br>
-                    <mat-radio-group aria-label="Select an option">
-                        <mat-radio-button #islinot='ngModel' name="islinot" [(ngModel)]='new.islinot' value="true" required>Link Externo</mat-radio-button>
-                        <mat-radio-button #islinot='ngModel' name="islinot" [(ngModel)]='new.islinot' value="false" required>Noticia</mat-radio-button>
-                    </mat-radio-group>
+                    <input type="radio" #islinot="ngModel" name="islinot" [(ngModel)]='nw.islinot' value="true" class="form-control col-sm" required>Url Externo
+                    <input type="radio" #islinot="ngModel" name="islinot" [(ngModel)]='nw.islinot' value="false" class="form-control col-sm" required>Descripción
                 </div>
 
-                <div class="container" *ngIf="new.islinot === 'true'">
-                    <label>Url Externo</label>
-                    <input type="url" #link='ngModel' name="link" [(ngModel)]='new.link'>
+                <div class="container url" *ngIf="nw.islinot === 'true'">
+                    <!-- <input type="url" #link='ngModel' name="link" [(ngModel)]='nw.link'><br> -->
+
+                    <mat-form-field appearance="outline" class="link">
+                        <input matInput type="url" #link='ngModel' name="link" [(ngModel)]='nw.link' required placeholder="Link de la Noticia">
+                      </mat-form-field>
                 </div>
 
-                
+                <div class="container" *ngIf="nw.islinot === 'false'">
+                    <ejs-richtexteditor #toolsRTE id='alltoolRTE' [toolbarSettings]='tools' (actionComplete)='onActionCompete($event)' #toolsRTE id='alltoolRTE' [toolbarSettings]='tools' #detail='ngModel' name='detail' [(ngModel)]='nw.detail' required placeholder="Descripción" class="form-control"></ejs-richtexteditor><br>
+                </div>
+
+                <div class="container isps">
+                    <label>Importancia de Noticia</label><br>
+                    <input type="radio" #ispriseg='ngModel' name="ispriseg" [(ngModel)]='nw.ispriseg' value="true" class="form-control col-md" required>Principal
+                    <input type="radio" #ispriseg='ngModel' name="ispriseg" [(ngModel)]='nw.ispriseg' value="false" required class="form-control col-md" required>Segundario<br>
+                </div>
+
+                <div class="op">
+                    <input type="submit" value="Crear" class="btn btn-success">
+                </div>
             </form>
         </div>
     </div>
