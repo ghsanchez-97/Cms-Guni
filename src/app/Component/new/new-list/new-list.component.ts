@@ -53,4 +53,23 @@ export class NewListComponent implements OnInit {
     })
   }
 
+  onDeleteConfirm(id){
+    this.confirm = id;
+  }
+
+  onCancelEvent(){
+    this.confirm = null;
+  }
+
+  onDeleteEvent(id){
+    this.newService.delNew(this.token, id).subscribe(
+      (res : any) => {
+        this.getNews();
+      },e =>{
+        var errorMessage = <any>e;
+        console.log(errorMessage);
+      }
+    )
+  }
+
 }

@@ -39,6 +39,10 @@ import { EventEditComponent } from './Component/Event/event-edit/event-edit.comp
 import { NewNwComponent } from './Component/new/new-nw/new-nw.component';
 import { NewComponent } from './Component/new/new/new.component';
 import { NewListComponent } from './Component/new/new-list/new-list.component';
+import { NewEditComponent } from './Component/new/new-edit/new-edit.component';
+import { NewViewComponent } from './Component/new/new-view/new-view.component';
+
+
 
 @NgModule({
   declarations: [
@@ -56,7 +60,9 @@ import { NewListComponent } from './Component/new/new-list/new-list.component';
     EventEditComponent,
     NewNwComponent,
     NewComponent,
-    NewListComponent
+    NewListComponent,
+    NewEditComponent,
+    NewViewComponent
   ],
   imports: [
     BrowserModule,

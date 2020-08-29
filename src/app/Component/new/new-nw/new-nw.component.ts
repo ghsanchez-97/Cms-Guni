@@ -44,6 +44,31 @@ export class NewNwComponent implements OnInit {
   ngOnInit() {
   }
 
+  onActionComplete(args){
+    if(args.requestType == "Image"){
+      var imgElement = args.elements[0];
+      this.toBase64(imgElement.src,function(dataUrl){
+        imgElement.setAttribute('src',dataUrl)
+      });
+    }
+  }
+  
+
+  toBase64(url, callback){
+    var httpRequest = new XMLHttpRequest();
+    httpRequest.onload = function(){
+      var filereader = new FileReader();
+      filereader.onloadend = function(){
+        callback(filereader.result);
+      }
+      filereader.readAsDataURL(httpRequest.response);
+    }
+
+    httpRequest.open('GET', url);
+    httpRequest.responseType = 'blob';
+    httpRequest.send();
+  }
+
   onSubmitNw(){
     console.log(this.nw);
 

@@ -17,6 +17,8 @@ import { EventEditComponent } from './Component/Event/event-edit/event-edit.comp
 import { NewNwComponent } from './Component/new/new-nw/new-nw.component';
 import { NewComponent } from './Component/new/new/new.component';
 import { NewListComponent } from './Component/new/new-list/new-list.component';
+import { NewEditComponent } from './Component/new/new-edit/new-edit.component';
+import { NewViewComponent } from './Component/new/new-view/new-view.component';
 
 import { AuthService } from './Services/auth.service';
 
@@ -85,7 +87,16 @@ const routes: Routes = [
     component: NewListComponent,
     canActivate: [AuthService]
   },
-  
+  {
+    path: 'new-edit/:id',
+    component: NewEditComponent,
+    canActivate: [AuthService]
+  },
+  {
+    path: 'new-view/:id',
+    component: NewViewComponent,
+    canActivate: [AuthService]
+  },  
   {
     path:'**',
     redirectTo:''

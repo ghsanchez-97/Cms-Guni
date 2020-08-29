@@ -1,0 +1,78 @@
+<section>
+    
+    <header>
+        <div class="container nav">
+            <div class="row list">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                   <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="menu navbar-nav">
+                        <li class="col-sm nav-item active">
+                            <a class="nav-link" href="#">Inicio</a>
+                        </li>
+                        <li class="col-sm nav-item active">
+                            <a class="nav-link" href="#">Quienes Somos</a>
+                        </li>
+                        <li class="col-sm nav-item active">
+                            <a class="nav-link" href="#">Recintos</a>
+                        </li>
+                        <li class="col-sm nav-item active">
+                            <a class="nav-link" href="#">Contacto</a>
+                        </li>
+                    </ul>
+                   </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <body>
+       <div *ngIf='nw'>
+        <div class="container bd">
+            <div class="row">
+                <div class="bod col-sm">
+                    <h1>{{nw.name}}</h1>
+                    <div class="w-100">
+                        <div class="e-rte-content" id="alltoolRTErte-view" _ngcontent-cwx-c1="" style="height: auto; margin-top: 0px;">
+                            <div class="e-content e-lib e-keyboard" id="alltoolRTE_rte-edit-view" _ngcontent-hfb-c1="" contenteditable="false">
+                              <div class="container">
+                                <div class="col-md-10" [innerHTML]='nw.detail'></div>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+         </div>
+       </div>
+
+        <div class="container more">
+            <div class="row">
+                <div class="title">
+                    <h3>Más Noticia</h3>
+                </div>
+            </div>
+
+            <div class="w-100">
+                <nav>
+                    <ul>
+                        <li>
+                            <div class="more-news" *ngFor='let element of nws'>
+                                <div *ngIf='element.ispriseg === false && element.islinot === true'>
+                                    <a href="https://{{element.link}}" target="_blank">
+                                        {{element.name}}
+                                    </a>
+                                </div>
+                                <div *ngIf='element.ispriseg === false && element.islinot === false'>
+                                    <a [routerLink]="['/new-view', element._id]" target="_blank">
+                                        {{element.name}}
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </body>
+
+</section>

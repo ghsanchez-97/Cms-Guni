@@ -1,0 +1,56 @@
+<section>
+
+    <div class="container menu">
+        <app-cms></app-cms>
+    </div>
+
+    <div class="title">
+        <h1>Actualizar Noticia</h1>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <form #formNew='ngForm' class="col-xl nw" (ngSubmit)='onSubmitNw()'>
+                <div class="container col-sm">
+                    <mat-form-field appearance="outline">
+                      <mat-label>Titulo</mat-label>
+                      <input matInput type="text" #name='ngModel' name="name" [(ngModel)]='nw.name' required placeholder="Titulo de la Noticia">  
+                    </mat-form-field>
+                </div>
+
+                <div class="container sm">
+                    <label>Opción de Noticia</label><br>
+                    <input type="radio" #islinot="ngModel" name="islinot" [(ngModel)]='nw.islinot' value="true" class="form-control col-sm" required>Url Externo
+                    <input type="radio" #islinot="ngModel" name="islinot" [(ngModel)]='nw.islinot' value="false" class="form-control col-sm" required>Descripción
+                </div>
+
+                <div class="container url" *ngIf="nw.islinot === 'true'">
+                    <!-- <input type="url" #link='ngModel' name="link" [(ngModel)]='nw.link'><br> -->
+
+                    <mat-form-field appearance="outline" class="link">
+                        <input matInput type="url" #link='ngModel' name="link" [(ngModel)]='nw.link' required placeholder="Link de la Noticia">
+                      </mat-form-field>
+                </div>
+
+                <div class="container" *ngIf="nw.islinot === 'false'">
+                    <ejs-richtexteditor #toolsRTE id='alltoolRTE' [toolbarSettings]='tools' (actionComplete)='onActionCompete($event)'[insertImageSettings]='insertImageSettings' #detail='ngModel' name='detail' [(ngModel)]='nw.detail' required placeholder="Descripción" class="form-control"></ejs-richtexteditor><br>
+                </div>
+
+                <div class="container isps">
+                    <label>Importancia de Noticia</label><br>
+                    <input type="radio" #ispriseg='ngModel' name="i spriseg" [(ngModel)]='nw.ispriseg' value="true" class="form-control col-md" required>Principal
+                    <input type="radio" #ispriseg='ngModel' name="ispriseg" [(ngModel)]='nw.ispriseg' value="false" required class="form-control col-md" required>Segundario<br>
+                </div>
+
+                <div class="container">
+                    <label>Elegir Imagen </label>
+                    <input type="file"  required placeholder="Imagen en espera..." (change)='fileChangeEvent($event)' class="form-control col-xl" >
+                </div>
+
+                <div class="op">
+                    <input type="submit" value="Actualizar" class="btn btn-success">
+                </div>
+            </form>
+        </div>
+    </div>
+</section>

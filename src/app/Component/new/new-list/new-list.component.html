@@ -14,7 +14,7 @@
                  </a> 
               </div>
               <div *ngIf='element && element.islinot === false'>
-                <a href="#" target="_blank">
+                <a [routerLink]="['/new-view', element._id]" target="_blank">
                    {{element.name}}
                 </a> 
              </div>
@@ -26,7 +26,7 @@
               <div class="op example-buttom-container">
                 <button mat-fab color="primary" aria-label="Editar Evento" matTooltip="Editar" style="margin-right: 31px">
                   <mat-icon class="cd">
-                      <a [routerLink]="['/event-edit', element._id]">create</a>
+                      <a [routerLink]="['/new-edit', element._id]">create</a>
                   </mat-icon>
                 </button>
 
