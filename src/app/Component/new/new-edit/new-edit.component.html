@@ -33,7 +33,7 @@
                 </div>
 
                 <div class="container" *ngIf="nw.islinot === 'false'">
-                    <ejs-richtexteditor #toolsRTE id='alltoolRTE' [toolbarSettings]='tools' (actionComplete)='onActionCompete($event)'[insertImageSettings]='insertImageSettings' #detail='ngModel' name='detail' [(ngModel)]='nw.detail' required placeholder="Descripción" class="form-control"></ejs-richtexteditor><br>
+                    <ejs-richtexteditor #toolsRTE id='alltoolRTE' [toolbarSettings]='tools' (actionComplete)='onActionComplete($event)'[insertImageSettings]='insertImageSettings' #detail='ngModel' name='detail' [(ngModel)]='nw.detail' required placeholder="Descripción" class="form-control"></ejs-richtexteditor><br>
                 </div>
 
                 <div class="container isps">

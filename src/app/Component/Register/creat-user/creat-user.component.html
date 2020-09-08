@@ -22,7 +22,7 @@
                 <div class="row">
                     <mat-form-field appearance="outline" class="fsn col-sm">
                         <mat-label>Primer nombre</mat-label>
-                        <input matInput [formControl]="RegisterFormControl" placeholder="Madisson" name="firstname" firstname="ngModel" [(ngModel)]="register.firstname">
+                        <input matInput [formControl]="RegisterFormControl" placeholder="Madisson" name="firstname" firstname="ngModel" [(ngModel)]="user.firstname">
                         <mat-error *ngIf="RegisterFormControl.hasError('firstname') && !RegisterFormControl.hasError('required')">
                             Please enter a valid firstname
                           </mat-error>
@@ -33,7 +33,7 @@
                      
                       <mat-form-field appearance="outline" class="fsn col-sm">
                         <mat-label>Segundo nombre</mat-label>
-                        <input matInput [formControl]='RegisterFormControl' placeholder="Hinata" name="middlename" middlename='ngModel' [(ngModel)]='register.middlename'>
+                        <input matInput [formControl]='RegisterFormControl' placeholder="Hinata" name="middlename" middlename='ngModel' [(ngModel)]='user.middlename'>
                         <mat-error *ngIf="RegisterFormControl.hasError('middlename') && !RegisterFormControl.hasError('required')">
                             Please enter a valid middlename
                           </mat-error>
@@ -46,7 +46,7 @@
                 <div class="row">
                     <mat-form-field appearance="outline" class="fsl col-sm">
                         <mat-label>Primer Apellido</mat-label>
-                        <input [formControl]='RegisterFormControl' matInput placeholder="Sánchez" name="firstlastname" firstlastname='ngModel' [(ngModel)]='register.firstlastname'>
+                        <input [formControl]='RegisterFormControl' matInput placeholder="Sánchez" name="firstlastname" firstlastname='ngModel' [(ngModel)]='user.firstlastname'>
                         <mat-error *ngIf="RegisterFormControl.hasError('firstlastname') && !RegisterFormControl.hasError('required')">
                             Please enter a valid firstlastname
                           </mat-error>
@@ -57,7 +57,7 @@
 
                       <mat-form-field appearance="outline" class="fsl col-sm">
                         <mat-label>Segundo Apellido</mat-label>
-                        <input matInput [formControl]='RegisterFormControl' placeholder="Orh" name="middlelastname" middlelastname='ngModel' [(ngModel)]='register.middlelastname'>
+                        <input matInput [formControl]='RegisterFormControl' placeholder="Orh" name="middlelastname" middlelastname='ngModel' [(ngModel)]='user.middlelastname'>
                         <mat-error *ngIf="RegisterFormControl.hasError('middlelastname') && !RegisterFormControl.hasError('required')">
                             Please enter a valid middlelastname
                           </mat-error>
@@ -70,7 +70,7 @@
                 <div class="row">
                     <mat-form-field appearance="outline" class="uspw col-sm">
                         <mat-label>Usuario</mat-label>
-                        <input matInput [formControl]='RegisterFormControl' placeholder="mhsanchez" name="email" email='ngModel' [(ngModel)]='register.email'>
+                        <input matInput [formControl]='RegisterFormControl' placeholder="mhsanchez" name="email" email='ngModel' [(ngModel)]='user.email'>
                         <mat-error *ngIf="RegisterFormControl.hasError('email') && !RegisterFormControl.hasError('required')">
                             Please enter a valid email
                           </mat-error>
@@ -81,7 +81,7 @@
 
                       <mat-form-field appearance="outline" class="uspw col-sm">
                         <mat-label>Contraseña</mat-label>
-      
+                        <input matInput [formControl]='RegisterFormControl' placeholder="Contraseña" name="password" password='ngModel' [(ngModel)]='user.password'>
                         <mat-error *ngIf="RegisterFormControl.hasError('password') && !RegisterFormControl.hasError('required')">
                             Please enter a valid password
                           </mat-error>
@@ -94,7 +94,7 @@
                 <div class="row">
                     <mat-form-field appearance="outline" class="rol col-sm-5">
                         <mat-label>Role</mat-label>
-                        <mat-select [formControl]='RegisterFormControl' name='rol' rol='ngModel' [(ngModel)]='register.rol'>
+                        <mat-select [formControl]='RegisterFormControl' name='rol' rol='ngModel' [(ngModel)]='user.rol'>
                             <mat-option value="Admin">Administrador</mat-option>
                             <mat-option value="User">Usuario</mat-option>
                           </mat-select>

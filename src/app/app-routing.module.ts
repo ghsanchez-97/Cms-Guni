@@ -20,6 +20,9 @@ import { NewListComponent } from './Component/new/new-list/new-list.component';
 import { NewEditComponent } from './Component/new/new-edit/new-edit.component';
 import { NewViewComponent } from './Component/new/new-view/new-view.component';
 
+import { AgendComponent } from './Component/Agend/agend/agend.component';
+import { AgendNewComponent } from './Component/Agend/agend-new/agend-new.component';
+
 import { AuthService } from './Services/auth.service';
 
 const routes: Routes = [
@@ -96,7 +99,17 @@ const routes: Routes = [
     path: 'new-view/:id',
     component: NewViewComponent,
     canActivate: [AuthService]
+  },
+  {
+    path: 'agend',
+    component: AgendComponent,
+    canActivate: [AuthService]
   },  
+  {
+    path:'agend-new',
+    component: AgendNewComponent,
+    canActivate: [AuthService]
+  }, 
   {
     path:'**',
     redirectTo:''

@@ -71,6 +71,7 @@ export class NewEditComponent implements OnInit {
     httpRequest.open('GET', url);
     httpRequest.responseType = 'blob';
     httpRequest.send();
+    console.log(httpRequest.response);
   }
 
   getNew(){

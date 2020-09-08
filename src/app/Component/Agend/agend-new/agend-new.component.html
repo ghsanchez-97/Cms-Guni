@@ -1,0 +1,47 @@
+<section>
+    
+    <div class="container menu">
+        <app-cms></app-cms>
+    </div>
+
+    <div class="header container">
+        <div class="row">
+            <div class="title col-sm">
+                <h1>Nueva agenda</h1>
+            </div>
+        </div>
+
+        <div class="container body">
+            <div class="justify-content-md-center">
+                <form #formAgend='ngForm' class="row justify-content-md-center age" (ngSubmit)='onSubmitAgend()'>
+                    <div class="col col-lg-2 agend">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Titulo</mat-label>
+                            <input matInput type="text" #name='ngModel' name="name" [(ngModel)]='agend.name' required placeholder="Titulo de la Agenda">  
+                        </mat-form-field>
+                    </div>
+                    <div class="col col-lg-2 agend">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Descripcion</mat-label>
+                            <input matInput type="text" #description='ngModel' name="description" [(ngModel)]='agend.description' required placeholder="Información breve">  
+                        </mat-form-field>
+                    </div>
+                    <div class="col col-lg-2 agend">
+                        <mat-form-field appearance="outline">
+                            <mat-label>Descripcion</mat-label>
+                            <input matInput type="date" #date='ngModel' name="date" [(ngModel)]='agend.date' required placeholder="Información breve">  
+                        </mat-form-field>
+                    </div>
+                    <div class="container">
+                        <ejs-richtexteditor #toolsRTE id='alltoolRTE' [toolbarSettings]='tools' (actionComplete)='onActionCompete($event)' #toolsRTE id='alltoolRTE' [toolbarSettings]='tools' #detail='ngModel' name='detail' [(ngModel)]='agend.detail' required placeholder="Descripción" class="form-control"></ejs-richtexteditor><br>
+                    </div>
+
+                    <div class="op">
+                        <input type="submit" value="Crear" class="btn btn-success">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</section>

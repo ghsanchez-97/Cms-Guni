@@ -20,6 +20,17 @@ header{
     display: block;
     padding: 20px;
     text-decoration: none;
+    text-align: center;
+    color: #003782;
+    text-transform: uppercase;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    transition: color 0.8s ease-in-out 0.2s;
+}
+.nav nav ul li a:hover{
+    padding: 20px;
+    background-color: #003782;
+    color: #ffffff;
+    
 }
 body{
     padding: 0;
@@ -41,7 +52,7 @@ body{
 .more nav ul li{
     text-decoration: none;
     list-style: none;
-    right: 36px;
+    right: 50px;
     position: relative;
     text-align: center
 }

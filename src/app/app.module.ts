@@ -42,6 +42,16 @@ import { NewListComponent } from './Component/new/new-list/new-list.component';
 import { NewEditComponent } from './Component/new/new-edit/new-edit.component';
 import { NewViewComponent } from './Component/new/new-view/new-view.component';
 
+import { AgendComponent } from './Component/Agend/agend/agend.component';
+import { AgendNewComponent } from './Component/Agend/agend-new/agend-new.component';
+
+
+import { registerLocaleData } from '@angular/common';
+import localeEsNi from '@angular/common/locales/es-NI';
+import localeEsNiExtra from '@angular/common/locales/extra/es-NI';
+import { LOCALE_ID } from '@angular/core';
+
+registerLocaleData(localeEsNi, 'es-NI', localeEsNiExtra);
 
 
 @NgModule({
@@ -62,7 +72,9 @@ import { NewViewComponent } from './Component/new/new-view/new-view.component';
     NewComponent,
     NewListComponent,
     NewEditComponent,
-    NewViewComponent
+    NewViewComponent,
+    AgendComponent,
+    AgendNewComponent
   ],
   imports: [
     BrowserModule,
@@ -86,7 +98,7 @@ import { NewViewComponent } from './Component/new/new-view/new-view.component';
     MatRadioModule,
     RichTextEditorAllModule
   ],
-  providers: [],
+  providers: [{provide: LOCALE_ID, useValue: "es-NI"}],
   bootstrap: [AppComponent],
   exports: []
 })

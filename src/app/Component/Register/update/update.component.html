@@ -38,7 +38,8 @@
 
           <div class="row">
             <mat-form-field appearance="outline" class="uspw col-sm">
-              
+              <mat-label>Contraseña</mat-label>
+              <input matInput  placeholder="Contraseña">
             </mat-form-field>
 
                 <mat-form-field appearance="outline" class="rol col-sm-5">
@@ -46,8 +47,8 @@
                   <mat-select name='rol' rol='ngModel' [(ngModel)]='user.rol'>
                       <mat-option value="Admin">Administrador</mat-option>
                       <mat-option value="User">Usuario</mat-option>
-                    </mat-select>
-                    </mat-form-field>
+                  </mat-select>
+                  </mat-form-field>
           </div>
 
           <div class="row">

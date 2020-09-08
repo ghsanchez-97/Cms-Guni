@@ -4,22 +4,20 @@ import { ToolbarService, LinkService, ImageService, HtmlEditorService, TableServ
 
 import { GLOBAL } from '../../../Services/Global';
 import { UserService } from '../../../Services/user.service';
-import { UploadService } from '../../../Services/upload.service';
-import { NewService } from '../../../Services/new.service';
-import { New } from '../../../models/new';
+import { AgendService } from '../../../Services/agend.service';
+import { Agend } from '../../../models/agend';
 
 @Component({
-  selector: 'app-new-nw',
-  templateUrl: './new-nw.component.html',
-  styleUrls: ['./new-nw.component.css'],
-  providers: [UserService,NewService,ToolbarService, LinkService, ImageService, HtmlEditorService, TableService]
+  selector: 'app-agend-new',
+  templateUrl: './agend-new.component.html',
+  styleUrls: ['./agend-new.component.css'],
+  providers:[UserService, AgendService,ToolbarService, LinkService, ImageService, HtmlEditorService, TableService]
 })
-export class NewNwComponent implements OnInit {
+export class AgendNewComponent implements OnInit {
 
-  nw : New;
+  agend: Agend;
   token;
   url;
-  insertImageSettings: any;
   tools: Object ={
     items:[
       'Bold', 'Italic', 'Underline', 'StrikeThrough', '|',
@@ -34,14 +32,14 @@ export class NewNwComponent implements OnInit {
   constructor(
     private router: Router,
     private userService: UserService,
-    private newService: NewService
-  ) { 
-    this.token = this.userService.getToken();
-    this.url = GLOBAL.url;
-    this.nw = new New('','','','',null,null);
-  }
+    private agendService: AgendService
+  ) {
+    this.token = this.userService.getToken()
+    this.url = GLOBAL.url
+    this.agend = new Agend('','','',new Date())
+   }
 
-  ngOnInit() {
+  ngOnInit(): void {
   }
 
   onActionComplete(args){
@@ -69,21 +67,22 @@ export class NewNwComponent implements OnInit {
     httpRequest.send();
   }
 
-  onSubmitNw(){
-    console.log(this.nw);
+  onSubmitAgend(){
+    console.log(this.agend)
 
-    this.newService.addNew(this.token, this.nw).subscribe(
-      (res:any) =>{
-        let wn = res;
+    this.agendService.addAgend(this.token, this.agend).subscribe(
+      (res:any)=>{
+        let agend = !res ? [] : res.agend
 
-        this.router.navigate(['/New']);
+        this.router.navigate(['/agend']);
       },e =>{
-        var errorMessage = <any>e;
+        const errorMessage = <any>e
         if(errorMessage != null){
-          var body = JSON.parse(e.body);
-          console.log(e);
+          let body = JSON.parse(e.body)
+          console.log(e)
         }
       }
     )
   }
+
 }

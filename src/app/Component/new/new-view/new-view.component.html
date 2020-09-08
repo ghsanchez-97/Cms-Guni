@@ -56,7 +56,7 @@
                 <nav>
                     <ul>
                         <li>
-                            <div class="more-news" *ngFor='let element of nws'>
+                            <div class="more-news" *ngFor='let element of nws | paginate: { itemsPerPage: 5, currentPage: p }'>
                                 <div *ngIf='element.ispriseg === false && element.islinot === true'>
                                     <a href="https://{{element.link}}" target="_blank">
                                         {{element.name}}
@@ -68,6 +68,7 @@
                                     </a>
                                 </div>
                             </div>
+                            <pagination-controls (pageChange)="p = $event"></pagination-controls>
                         </li>
                     </ul>
                 </nav>

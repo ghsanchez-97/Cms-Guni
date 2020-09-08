@@ -1,0 +1,20 @@
+@font-face{
+    font-family: 'Source Sans Pro Black';
+    src: url('/assets/Font/SourceSansPro-Black.otf');
+}
+.header{
+    position: absolute;
+    left: 500px;
+    width: 925px;
+    top: 50px;
+}
+.header .title{
+    position: relative;
+    font-family: 'Source Sans Pro Black',sans-serif;
+    -webkit-text-stroke: 5px #003782;
+    color: white;
+    text-transform: uppercase;
+}
+.age .agend{
+    max-width: none;
+}

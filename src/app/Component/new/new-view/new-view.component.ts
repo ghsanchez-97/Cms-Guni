@@ -30,6 +30,7 @@ export class NewViewComponent implements OnInit {
       'Image', '|', 'ClearFormat', 'Print', 'SourceCode', '|', 'FullScreen'
     ]
   };
+  p: number = 1;
 
 
   constructor(

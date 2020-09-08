@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, Validators, FormBuilder, FormGroup} from '@angular/forms';
 
-import { Register } from '../../../models/register';
 import { User } from '../../../models/user';
 import { UserService } from '../../../Services/user.service'
 import { Router } from '@angular/router';
@@ -17,7 +16,6 @@ export class CreatUserComponent implements OnInit {
   hide = true;
   errorMessage;
   alertMessage;
-  //user = User;
   token;
   user = new User('','','','','','','','','','');
 

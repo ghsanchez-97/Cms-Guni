@@ -56,8 +56,8 @@ export class UserService {
   }
 
   updateUser(user, id, token){
-    var params = JSON.stringify(user);
-    var headers= new HttpHeaders({
+    let params = JSON.stringify(user);
+    let headers= new HttpHeaders({
       'Content-Type': 'application/json',
       'Authorization': token
     });

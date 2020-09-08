@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-//import {FormControl, Validators, FormBuilder, FormGroup} from '@angular/forms';
+import {FormControl, Validators, FormBuilder, FormGroup} from '@angular/forms';
 
 import { User } from '../../../models/user';
-import { UserService } from '../../../Services/user.service'
+import { UserService } from '../../../Services/user.service';
+import { UploadService } from '../../../Services/upload.service';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { GLOBAL } from 'src/app/Services/Global';
 
@@ -10,18 +11,20 @@ import { GLOBAL } from 'src/app/Services/Global';
   selector: 'app-update',
   templateUrl: './update.component.html',
   styleUrls: ['./update.component.css'],
-  providers: [UserService]
+  providers: [UserService, UploadService]
 })
 export class UpdateComponent implements OnInit {
   hide = true;
   token;
   user : User;
   url: string;
+  filesToUpload: Array<File>;
 
   constructor(
     private userservices: UserService, 
     private router:Router, 
-    private route:ActivatedRoute
+    private route:ActivatedRoute,
+    private uploadService: UploadService
   ) {
     this.token = this.userservices.getToken();
     this.url = GLOBAL.url;
@@ -58,27 +61,39 @@ export class UpdateComponent implements OnInit {
 
   onSubmitUp(){
      console.log(this.user)
-    // this.route.params.forEach((params : Params) =>{
-    //   var id = params['id'];
+    this.route.params.forEach((params : Params) =>{
+      const id = params['id'];
 
-    //   this.userservices.updateUser(this.token, id, this.user).subscribe(
-    //     (res:any) =>{
-    //       this.user = !res ? [] : res.user;
+      this.userservices.updateUser(this.token, id, this.user).subscribe(
+        (res:any) =>{
+          const update = res;
   
-    //       if(!this.user){
-    //         this.router.navigate(['/List-User']);
-    //       }e =>{
-    //         var errorMessage = <any>e;
+          if(!update){
+            this.router.navigate(['/List-User']);
+          }else{
+            this.uploadService.makeFileRequest(this.url+'upload-image/'+id, [], this.filesToUpload, this.token, 'image')
+                .then(
+                  (result) => {
+                    this.router.navigate(['/list-new']);
+                  },e => {
+                    console.log(e);
+                  }
+                )
+              this.router.navigate(['/list-new']);
+          }
+        },e =>{
+          var errorMessage = <any>e;
 
-    //         if(errorMessage != null){
-    //           var body = JSON.parse(e.body);
-    //           console.log(body)
-    //         }
-    //       }
-    //     }
-    //   )
-    // })
+          if(errorMessage != null){
+            var body = JSON.parse(e.body);
+            console.log(body)
+          }
+        }
+      )
+    })
   }
-
+  fileChangeEvent(fileInput: any){
+    this.filesToUpload = <Array<File>>fileInput.target.files;
+  }
 
 }
