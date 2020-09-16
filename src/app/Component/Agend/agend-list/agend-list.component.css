@@ -1,0 +1,49 @@
+*{
+    box-sizing: border-box
+}
+.material-icons{
+    color: #003782;
+    font-size: 3rem;
+}
+.btn-back{
+    position: absolute;
+    top: 83px;
+    left: 194px;
+    text-decoration: none;
+    list-style: none;
+}
+.body .select{
+    position: relative;
+    left: 640px;
+    top: 158px;
+}
+.row .col-lg{
+    background-color: #003782;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+.slect .col{
+    border: 2px solid #000000;
+}
+.cd{
+    color: #ffffff;
+    font-size: x-large;
+}
+.name a{
+    text-decoration: none;
+    position: absolute;
+    top: 16px;
+    color: #ffffff;
+}
+.name a:hover{
+    color: #003782;
+}
+.date h5{
+    position: absolute;
+    top: 16px;
+}
+
+pagination-controls{
+    position: relative;
+    top: 40px;
+}

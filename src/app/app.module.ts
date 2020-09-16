@@ -44,12 +44,13 @@ import { NewViewComponent } from './Component/new/new-view/new-view.component';
 
 import { AgendComponent } from './Component/Agend/agend/agend.component';
 import { AgendNewComponent } from './Component/Agend/agend-new/agend-new.component';
-
+import { AgendListComponent } from './Component/Agend/agend-list/agend-list.component';
 
 import { registerLocaleData } from '@angular/common';
 import localeEsNi from '@angular/common/locales/es-NI';
 import localeEsNiExtra from '@angular/common/locales/extra/es-NI';
 import { LOCALE_ID } from '@angular/core';
+
 
 registerLocaleData(localeEsNi, 'es-NI', localeEsNiExtra);
 
@@ -74,7 +75,8 @@ registerLocaleData(localeEsNi, 'es-NI', localeEsNiExtra);
     NewEditComponent,
     NewViewComponent,
     AgendComponent,
-    AgendNewComponent
+    AgendNewComponent,
+    AgendListComponent
   ],
   imports: [
     BrowserModule,

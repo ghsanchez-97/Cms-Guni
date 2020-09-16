@@ -48,7 +48,7 @@ export class AgendService {
       'Authorization' : token
     });
 
-    return this.http.get(this.url+'getAgends/'+page, {headers : headers});
+    return this.http.get(this.url+'getsAgends/'+page, {headers : headers});
   }
 
   getAgendsPublic(page){

@@ -22,6 +22,7 @@ import { NewViewComponent } from './Component/new/new-view/new-view.component';
 
 import { AgendComponent } from './Component/Agend/agend/agend.component';
 import { AgendNewComponent } from './Component/Agend/agend-new/agend-new.component';
+import { AgendListComponent } from './Component/Agend/agend-list/agend-list.component';
 
 import { AuthService } from './Services/auth.service';
 
@@ -108,6 +109,11 @@ const routes: Routes = [
   {
     path:'agend-new',
     component: AgendNewComponent,
+    canActivate: [AuthService]
+  },
+  {
+    path: 'agend-list',
+    component: AgendListComponent,
     canActivate: [AuthService]
   }, 
   {

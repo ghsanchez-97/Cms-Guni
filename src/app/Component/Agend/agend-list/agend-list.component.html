@@ -1,0 +1,64 @@
+<section>
+    <div class="container menu">
+        <app-cms></app-cms>
+    </div>
+    <div class="container">
+        <button mat-raised-button matTooltip="Atras" class="btn-back">
+            <a routerLink='/agend' class="material-icons back">
+                menu_open
+            </a>
+        </button>
+    </div>
+
+    <div class="container body">
+        <div class="row select">
+            <div class="col col-lg">
+                <h3>Nombre</h3>
+            </div>
+            <div class="col col-lg">
+                <h3>Fecha</h3>
+            </div>
+            <div class="col col-lg">
+                <h3>Opción</h3>
+            </div>
+            <div class="w-100 slect" *ngFor="let element of agend | paginate: { itemsPerPage: 3, currentPage: p }">
+                 <div class="row view">
+                    <div class=" col col-md name">
+                       <a href="#" target="_blank">
+                           {{element.name}}
+                       </a>
+                    </div>
+                    <div class="col col-md date">
+                       <h5>{{element.date| date: shortDate}}</h5>
+                   </div>
+                   <div class="col col-md op">
+                    <div class="row">
+                        <button mat-fab color="primary" aria-label="Editar Evento" matTooltip="Editar" style="margin-right: 31px; margin-left: 6px;">
+                            <mat-icon class="cd">
+                                <a [routerLink]="['/agend-edit', element._id]">create</a>
+                            </mat-icon>
+                        </button>
+          
+                        <button mat-fab color="primary" aria-label="Eliminar Agenda" matTooltip="Eliminar">
+                            <mat-icon class="cd">
+                              <a (click)='onDeleteConfirm(element._id)'>delete</a>
+                            </mat-icon>
+                        </button>
+                    </div>
+                   </div>
+                   <div class="secure" *ngIf="confirm == element._id">
+                    <a (click)="onDeleteEvent(element._id)" class="btn btn-sm btn-danger">
+                      Eliminar
+                    </a>
+                    <br>
+                    <a (click)="onCancelEvent()" class="btn btn-sm btn-secondary">
+                      Cancelar
+                    </a>
+                    </div>
+                </div>
+            </div>
+            <pagination-controls (pageChange)="p = $event"></pagination-controls>
+        </div>
+    </div>
+
+</section>
